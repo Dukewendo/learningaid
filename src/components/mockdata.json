@@ -1,0 +1,20 @@
+ [
+  {
+    "id": 1,
+    "cardname": "Map() function",
+    "catagory": "javascript",
+    "cardnote": "map function does this---"
+  },
+  {
+    "id": 2,
+    "cardname": "react docs",
+    "catagory": "documentation",
+    "cardnote": "website link -www."
+  },
+  {
+    "id": 3,
+    "cardname": "youtube VS code",
+    "catagory": "VS code",
+    "cardnote": "shortcuts here- "
+  }
+]
