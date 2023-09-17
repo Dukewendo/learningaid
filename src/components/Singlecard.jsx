@@ -17,6 +17,9 @@ export default function Singlecard(props) {
   return (
     <div className="single-card-container">
       <Header />
+      <div>
+        <h5>Back button</h5>
+      </div>
       <div className="card-content">
         <div className="card-title">Card Title: {card.cardtitle}</div>
         <div className="card-category">Category: {card.category}</div>
