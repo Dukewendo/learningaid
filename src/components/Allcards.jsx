@@ -9,10 +9,10 @@ export default function Allcards(props) {
 
   return (
     <div className="card-container">
-      {cardData.map((item, index) => (
-        <div className="card-content">
+      {cardData.map((item) => (
+        <div className="card-content" key={item.cardtitle}>
           <a href={`/${item.id}`}>View card</a>
-          <h3 className="card-title" key={index}>
+          <h3 className="card-title" >
             Card Title: {item.cardtitle}
           </h3>
           <h4 className="card-category">Category: {item.category}</h4>

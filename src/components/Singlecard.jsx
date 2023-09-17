@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
+import Header from "../components/Header"
+import "../components/singlecard.css";
+
 export default function Singlecard(props) {
   const { id } = useParams();
 
@@ -8,15 +11,17 @@ export default function Singlecard(props) {
   const card = cardData.find((item) => item.id === id);
 
   if (!card) {
-    return <div className="no-card">Not found</div>
+    return <div className="no-card">Not found</div>;
   }
 
-
   return (
-    <div single-card-container>
-      <div className="card-title">Card Title: {card.id}</div>
-      <div className="card-category">Category: {card.category}</div>
-      <div className="card-note">Notes: </div>
+    <div className="single-card-container">
+      <Header />
+      <div className="card-content">
+        <div className="card-title">Card Title: {card.cardtitle}</div>
+        <div className="card-category">Category: {card.category}</div>
+        <div className="card-note">Notes: {card.cardnote} </div>
+      </div>
     </div>
   );
 }
