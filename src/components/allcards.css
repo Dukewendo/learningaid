@@ -1,0 +1,19 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: min-content;
+  gap: 10px;
+  margin: 10px;
+}
+
+.card-content {
+    width: 200px;
+    height: 175px;
+    background-color: aquamarine;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    justify-self: center;
+    text-align: center;
+    overflow: hidden;
+}

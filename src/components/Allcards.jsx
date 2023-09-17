@@ -1,16 +1,18 @@
 import React from "react";
+import "../components/allcards.css"
 
 export default function Allcards(props) {
   const cardData = props.carddata;
 
   return (
     <div className="card-container">
-      <h1>test</h1>
+    
       {cardData.map((item, index) => (
         <div className="card-content">
-          <h2 key={index}>Card Name: {item.cardname}</h2>
-          <h3>Catagory: {item.catagory}</h3>
-          <h4>Link</h4>
+          <h3 className="card-title" key={index}>Card Title: {item.cardtitle}</h3>
+          <h4 className="card-category">Category: {item.category}</h4>
+          <h5 className="card-note">Notes: {item.cardnote}</h5>
+          
         </div>
       ))}
     </div>

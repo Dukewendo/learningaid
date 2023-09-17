@@ -1,20 +1,38 @@
  [
   {
     "id": 1,
-    "cardname": "Map() function",
-    "catagory": "javascript",
-    "cardnote": "map function does this---"
+    "cardtitle": "Map() function",
+    "category": "javascript",
+    "cardnote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, explicabo. Iure molestiae ratione earum, minima officiis et minus quas incidunt."
   },
   {
     "id": 2,
-    "cardname": "react docs",
-    "catagory": "documentation",
+    "cardtitle": "react docs",
+    "category": "documentation",
     "cardnote": "website link -www."
   },
   {
     "id": 3,
-    "cardname": "youtube VS code",
-    "catagory": "VS code",
+    "cardtitle": "youtube VS code",
+    "category": "VS code",
     "cardnote": "shortcuts here- "
+  },
+  {
+    "id": 4,
+    "cardtitle": "CSS flexbox guide",
+    "category": "css",
+    "cardnote": "www.cssflexbox.com"
+  },
+  {
+    "id": 5,
+    "cardtitle": "netninja youtube",
+    "category": "youtube",
+    "cardnote": "website link -www."
+  },
+  {
+    "id": 6,
+    "cardtitle": "front end news",
+    "category": "news",
+    "cardnote": "www.newssite.com"
   }
 ]
