@@ -1,9 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-export default function Singlecard({cardData}) {
+export default function Singlecard(props) {
   const { id } = useParams();
 
+  const cardData = props.cardData;
   const card = cardData.find((item) => item.id === id);
 
   if (!card) {
