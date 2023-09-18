@@ -1,11 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-import Header from "../components/Header"
+import Header from "../components/Header";
 import "../components/singlecard.css";
 
 export default function Singlecard(props) {
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   const cardData = props.cardData;
   const card = cardData.find((item) => item.id === id);
@@ -17,14 +19,12 @@ export default function Singlecard(props) {
   return (
     <div className="single-card-container">
       <Header />
-      <div>
-        <h5>Back button</h5>
-      </div>
-      <div className="card-content">
+      <div className="single-card-content">
         <div className="card-title">Card Title: {card.cardtitle}</div>
         <div className="card-category">Category: {card.category}</div>
         <div className="card-note">Notes: {card.cardnote} </div>
       </div>
+      <button onClick={() => navigate(-1)}>Back to cards</button>
     </div>
   );
 }
