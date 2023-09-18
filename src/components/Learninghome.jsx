@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../components/learninghome.css";
+
 //Pages
 import Header from "./Header";
 import Allcards from "./Allcards";
@@ -9,7 +11,10 @@ export default function Learninghome(props) {
   return (
     <>
       <Header />
-      <input type="text" placeholder="Search cards" className="card-search" />
+      <div className="search-container">
+        <input type="text" placeholder="Search cards" className="card-search" />
+      </div>
+
       <Allcards cardData={cardData} />
     </>
   );

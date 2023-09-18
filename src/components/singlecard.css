@@ -1,16 +1,23 @@
 .single-card-container {
   display: grid;
-  grid-template-columns: 2;
-  grid-template-rows: 3;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
 }
 
 .single-card-content {
   width: 300px;
-  height: 120px;
+  height: auto;
   background-color: aquamarine;
   border-style: solid;
   border-color: black;
   border-radius: 10px;
   justify-self: center;
   text-align: center;
+  cursor: pointer;
+}
+
+.card-back-button {
+  margin: 20px;
+  width: 100px;
 }

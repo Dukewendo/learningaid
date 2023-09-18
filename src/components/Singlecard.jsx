@@ -19,12 +19,12 @@ export default function Singlecard(props) {
   return (
     <div className="single-card-container">
       <Header />
-      <div className="single-card-content">
+      <div className="single-card-content" onClick={() => navigate(-1)}>
         <div className="card-title">Card Title: {card.cardtitle}</div>
         <div className="card-category">Category: {card.category}</div>
         <div className="card-note">Notes: {card.cardnote} </div>
       </div>
-      <button onClick={() => navigate(-1)}>Back to cards</button>
+      
     </div>
   );
 }
