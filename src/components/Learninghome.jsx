@@ -11,9 +11,9 @@ export default function Learninghome(props) {
   const cardData = props.cardData;
 
   const navigate = useNavigate();
-  
+
   function handleClick() {
-    navigate("/newcard")
+    navigate("/newcard");
   }
 
   return (
@@ -23,10 +23,9 @@ export default function Learninghome(props) {
         <input type="text" placeholder="Search cards" className="card-search" />
       </div>
       <div className="button-container">
-        <button
-          className="add-card-button"
-          onClick={handleClick()}
-        >Add card</button>
+        <button className="add-card-button" onClick={handleClick}>
+          Add card
+        </button>
       </div>
 
       <Allcards cardData={cardData} />
