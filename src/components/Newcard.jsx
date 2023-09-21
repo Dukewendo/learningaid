@@ -3,6 +3,9 @@ import React from "react";
 import "../components/newcard.css";
 
 export default function Newcard() {
+
+  
+
   function handleSubmit() {
     alert("Added")
   }

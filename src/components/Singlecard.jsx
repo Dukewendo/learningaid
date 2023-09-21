@@ -24,7 +24,6 @@ export default function Singlecard(props) {
         <div className="card-category">Category: {card.category}</div>
         <div className="card-note">Notes: {card.cardnote} </div>
       </div>
-      
     </div>
   );
 }
