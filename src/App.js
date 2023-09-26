@@ -12,22 +12,30 @@ import Newcard from "./components/Newcard";
 //import cardData from "./components/mockdata.json";
 
 function App() {
-  
- let cardData = [];
+  let cardData = [];
 
- cardData.push(JSON.parse(localStorage.getItem('session')));
- localStorage.setItem('session', JSON.stringify(cardData));
- 
+  cardData.push(JSON.parse(localStorage.getItem("session")));
+  localStorage.setItem("session", JSON.stringify(cardData));
 
-  //let cardData = [{"id": "0", "cardtitle": "Testcard1", "category": "Testcategory1", "cardnote": "test notes"}];
+  localStorage.setItem(
+    "session",
+    JSON.stringify([
+      {
+        id: "0",
+        cardtitle: "Testcard1",
+        category: "Testcategory1",
+        cardnote: "test notes",
+      },
+    ])
+  );
 
+  let cards = JSON.parse(localStorage.getItem('session'));
 
-  
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Learninghome cardData={cardData} />}></Route>
-        <Route path="/:id" element={<Singlecard cardData={cardData} />}></Route>
+        <Route path="/" element={<Learninghome cardData={cards} />}></Route>
+        <Route path="/:id" element={<Singlecard cardData={cards} />}></Route>
         <Route path="/newcard" element={<Newcard />}></Route>
       </Routes>
     </BrowserRouter>
