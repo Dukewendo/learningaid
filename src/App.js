@@ -8,8 +8,6 @@ import Learninghome from "./components/Learninghome";
 import Singlecard from "./components/Singlecard";
 import Newcard from "./components/Newcard";
 
-//data  swap to localstorage
-//import cardData from "./components/mockdata.json";
 
 function App() {
   let cardData = [];
@@ -36,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Learninghome cardData={cards} />}></Route>
         <Route path="/:id" element={<Singlecard cardData={cards} />}></Route>
-        <Route path="/newcard" element={<Newcard />}></Route>
+        <Route path="/newcard" element={<Newcard cardData={cards}/>}></Route>
       </Routes>
     </BrowserRouter>
   );
