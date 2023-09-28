@@ -20,6 +20,9 @@ export default function Learninghome() {
     localStorage.clear();
   }
 
+  const storageSize = new Blob(Object.values(localStorage)).size;
+  console.log(`space left ${10000000 - storageSize} `);
+
   return (
     <>
       <Header />
