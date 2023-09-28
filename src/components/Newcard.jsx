@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../components/newcard.css";
 
 export default function Newcard() {
+  const navigate = useNavigate();
+
   const [cardtitle, setCardtitle] = useState("");
   const [cardcategory, setCardcategory] = useState("");
   const [cardnote, setCardnotes] = useState("");
@@ -11,13 +14,13 @@ export default function Newcard() {
     e.preventDefault();
     const newCard = { cardtitle, cardcategory, cardnote };
     let cardArray = [];
-    
+
     cardArray = JSON.parse(localStorage.getItem("session")) || [];
     cardArray.push(newCard);
 
     localStorage.setItem("session", JSON.stringify(cardArray));
 
-    console.log(cardArray)
+    navigate("/");
   }
 
   return (
