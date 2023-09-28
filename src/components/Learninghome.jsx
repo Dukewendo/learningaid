@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import "../components/learninghome.css";
 
@@ -18,7 +19,20 @@ export default function Learninghome() {
 
   function handlebuttonClick() {
     localStorage.clear();
+    window.location.reload();
   }
+
+  const [filterCards, setfilterCards] = useState("");
+
+  function handleSearch(e) {
+    setfilterCards(e.target.value);
+  }
+
+  let filteredCards = cardData.filter((cardData) => {
+    return console.log(
+      cardData.cardtitle.toLowerCase().includes(filterCards.toLowerCase())
+    );
+  });
 
   const storageSize = new Blob(Object.values(localStorage)).size;
   console.log(`space left ${10000000 - storageSize} bytes `);
@@ -27,7 +41,12 @@ export default function Learninghome() {
     <>
       <Header />
       <div className="search-container">
-        <input type="text" placeholder="Search cards" className="card-search" />
+        <input
+          type="text"
+          placeholder="Search by title"
+          className="card-search"
+          onChange={handleSearch}
+        />
       </div>
       <div className="button-container">
         <button className="add-card-button" onClick={handleClick}>
