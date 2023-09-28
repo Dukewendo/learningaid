@@ -10,7 +10,14 @@ export default function Newcard() {
   function handleSubmit(e) {
     e.preventDefault();
     const newCard = { cardtitle, cardcategory, cardnotes };
-    console.log(newCard);
+    let cardArray = [];
+    
+    cardArray = JSON.parse(localStorage.getItem("session")) || [];
+    cardArray.push(newCard);
+
+    localStorage.setItem("session", JSON.stringify(cardArray));
+
+    console.log(cardArray)
   }
 
   return (
@@ -21,20 +28,20 @@ export default function Newcard() {
           className="card-title"
           type="text"
           value={cardtitle}
-          onChange={(e) => setCardtitle}
+          onChange={(e) => setCardtitle(e.target.value)}
           placeholder="Card title"
         />
         <input
           className="card-category"
           value={cardcategory}
-          onChange={(e) => setCardcategory}
+          onChange={(e) => setCardcategory(e.target.value)}
           type="text"
           placeholder="Card category"
         />
         <textarea
           className="card-notes"
           value={cardnotes}
-          onChange={(e) => setCardnotes}
+          onChange={(e) => setCardnotes(e.target.value)}
           placeholder="card notes"
           name="card-notes"
           cols="30"
