@@ -29,13 +29,10 @@ export default function Learninghome() {
   }
 
   let filteredCards = cardData.filter((cardData) => {
-    return console.log(
-      cardData.cardtitle.toLowerCase().includes(filterCards.toLowerCase())
-    );
+    return cardData.cardtitle.toLowerCase().includes(filterCards.toLowerCase());
   });
 
   const storageSize = new Blob(Object.values(localStorage)).size;
-  console.log(`space left ${10000000 - storageSize} bytes `);
 
   return (
     <>
@@ -54,9 +51,10 @@ export default function Learninghome() {
         </button>
       </div>
 
-      <Allcards cardData={cardData} />
+      <Allcards cardData={filteredCards} />
 
       <button onClick={handlebuttonClick}>Clear all cards</button>
+      <h2>This page is using {storageSize} bytes of localStorage memory</h2>
     </>
   );
 }
