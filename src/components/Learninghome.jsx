@@ -7,13 +7,17 @@ import "../components/learninghome.css";
 import Header from "./Header";
 import Allcards from "./Allcards";
 
-export default function Learninghome(props) {
+export default function Learninghome() {
   let cardData = JSON.parse(localStorage.getItem("session")) || [];
 
   const navigate = useNavigate();
 
   function handleClick() {
     navigate("/newcard");
+  }
+
+  function handlebuttonClick() {
+    localStorage.clear();
   }
 
   return (
@@ -29,6 +33,8 @@ export default function Learninghome(props) {
       </div>
 
       <Allcards cardData={cardData} />
+
+      <button onClick={handlebuttonClick}>Clear all cards</button>
     </>
   );
 }
