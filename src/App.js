@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Learninghome cardData={cardData} />}></Route>
-        <Route path="/:id" element={<Singlecard cardData={cardData} />}></Route>
+        <Route path="/:cardtitle" element={<Singlecard cardData={cardData} />}></Route>
         <Route
           path="/newcard"
           element={<Newcard cardData={cardData} />}

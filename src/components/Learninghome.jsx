@@ -8,7 +8,7 @@ import Header from "./Header";
 import Allcards from "./Allcards";
 
 export default function Learninghome(props) {
-  const cardData = props.cardData;
+  let cardData = JSON.parse(localStorage.getItem("session")) || [];
 
   const navigate = useNavigate();
 

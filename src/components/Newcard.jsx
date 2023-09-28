@@ -5,11 +5,11 @@ import "../components/newcard.css";
 export default function Newcard() {
   const [cardtitle, setCardtitle] = useState("");
   const [cardcategory, setCardcategory] = useState("");
-  const [cardnotes, setCardnotes] = useState("");
+  const [cardnote, setCardnotes] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newCard = { cardtitle, cardcategory, cardnotes };
+    const newCard = { cardtitle, cardcategory, cardnote };
     let cardArray = [];
     
     cardArray = JSON.parse(localStorage.getItem("session")) || [];
@@ -40,7 +40,7 @@ export default function Newcard() {
         />
         <textarea
           className="card-notes"
-          value={cardnotes}
+          value={cardnote}
           onChange={(e) => setCardnotes(e.target.value)}
           placeholder="card notes"
           name="card-notes"
