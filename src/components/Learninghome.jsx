@@ -54,7 +54,10 @@ export default function Learninghome() {
       <Allcards cardData={filteredCards} />
 
       <button onClick={handlebuttonClick}>Clear all cards</button>
-      <h2>This page is using {storageSize} bytes of localStorage memory</h2>
+      <h3>
+        This page is using {(storageSize / 5000000) * 100} % of localStorage
+        memory
+      </h3>
     </>
   );
 }

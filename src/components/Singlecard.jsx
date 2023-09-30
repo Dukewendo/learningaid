@@ -16,6 +16,14 @@ export default function Singlecard(props) {
     return <div className="no-card">Not found</div>;
   }
 
+function handleClick() {
+  const existingData = JSON.parse(localStorage.getItem("session"));
+  existingData.splice(cardtitle.indexOf, 1)
+  localStorage.setItem("session", JSON.stringify(existingData))
+  navigate(-1)
+}
+
+
   return (
     <div className="single-card-container">
       <Header />
@@ -24,6 +32,7 @@ export default function Singlecard(props) {
         <div className="card-category">Category: {card.cardcategory}</div>
         <div className="card-note">Notes: {card.cardnote} </div>
       </div>
+      <button onClick={handleClick}>delete card</button>
     </div>
   );
 }
