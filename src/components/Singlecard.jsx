@@ -16,13 +16,13 @@ export default function Singlecard(props) {
     return <div className="no-card">Not found</div>;
   }
 
-function handleClick() {
-  const existingData = JSON.parse(localStorage.getItem("session"));
-  existingData.splice(cardtitle.indexOf, 1)
-  localStorage.setItem("session", JSON.stringify(existingData))
-  navigate(-1)
-}
-
+  //what is the item index?
+  function handleClick() {
+    const existingData = JSON.parse(localStorage.getItem("session"));
+    existingData.splice(cardData.indexOf(card), 1);
+    localStorage.setItem("session", JSON.stringify(existingData));
+    navigate(-1);
+  }
 
   return (
     <div className="single-card-container">
