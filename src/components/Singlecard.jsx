@@ -16,7 +16,6 @@ export default function Singlecard(props) {
     return <div className="no-card">Not found</div>;
   }
 
-  //what is the item index?
   function handleClick() {
     const existingData = JSON.parse(localStorage.getItem("session"));
     existingData.splice(cardData.indexOf(card), 1);
