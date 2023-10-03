@@ -18,8 +18,12 @@ export default function Learninghome() {
   }
 
   function handlebuttonClick() {
-    localStorage.clear();
-    window.location.reload();
+    if (window.confirm("Are you sure?")) {
+      localStorage.clear();
+      window.location.reload();
+    } else {
+      return false;
+    }
   }
 
   const [filterCards, setfilterCards] = useState("");
@@ -52,12 +56,15 @@ export default function Learninghome() {
       </div>
 
       <Allcards cardData={filteredCards} />
-
-      <button onClick={handlebuttonClick}>Clear all cards</button>
-      <h3>
-        This page is using {(storageSize / 5000000 * 100).toFixed(5)} % of localStorage
-        memory
-      </h3>
+      <div className="clear-all">
+        <button className="clear-all-button" onClick={handlebuttonClick}>
+          Clear all cards
+        </button>
+        <h5>
+          This page is using {((storageSize / 5000000) * 100).toFixed(5)} % of
+          localStorage memory
+        </h5>
+      </div>
     </>
   );
 }

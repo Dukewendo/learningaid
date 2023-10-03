@@ -18,3 +18,9 @@
 .add-card-button {
     margin: 5px;
 }
+
+.clear-all {
+  display: flex;
+  margin: 10px;
+}
+
