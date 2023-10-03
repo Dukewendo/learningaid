@@ -6,7 +6,12 @@
 }
 
 .single-card-content {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 400px;
   height: auto;
   background-color: aquamarine;
   color: black;
