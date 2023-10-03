@@ -9,6 +9,7 @@
   width: 300px;
   height: auto;
   background-color: aquamarine;
+  color: black;
   border-style: solid;
   border-color: black;
   border-radius: 10px;
@@ -25,4 +26,5 @@
 .delete-signle-card-button {
   width: 50px;
   background-color: firebrick;
+  margin: 20px;
 }

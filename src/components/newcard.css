@@ -1,3 +1,7 @@
+h1 {
+    color: aliceblue;
+}
+
 .submit-new-card-container {
  display: grid;
  grid-template-columns: 1fr;
@@ -14,15 +18,19 @@
 .card-title {
     grid-column-start: 1;
     grid-row-start: 1;
-    height: 40px;
+    height: 20px;
     width: 200px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .card-category {
     grid-column-start: 1;
     grid-row-start: 2;
-    height: 40px;
+    height: 20px;
     width: 200px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .card-notes {
@@ -31,9 +39,13 @@
     grid-row-start:4;
     height: 200px;
     width: 300px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .submit-button {
     grid-column-start: 1;
     grid-row-start: 5;
+    margin: 5px;
+    border-radius: 5px;
 }

@@ -27,9 +27,9 @@ export default function Singlecard(props) {
     <div className="single-card-container">
       <Header />
       <div className="single-card-content" onClick={() => navigate(-1)}>
-        <div className="card-title">Card Title: {card.cardtitle}</div>
-        <div className="card-category">Category: {card.cardcategory}</div>
-        <div className="card-note">Notes: {card.cardnote} </div>
+        <div className="card-title"><h2>Title: {card.cardtitle}</h2></div>
+        <div className="card-category"><h3>Category: {card.cardcategory}</h3></div>
+        <div className="card-note"><h3>Notes: {card.cardnote}</h3> </div>
       </div>
       <button className="delete-signle-card-button" onClick={handleClick}>delete card</button>
     </div>
