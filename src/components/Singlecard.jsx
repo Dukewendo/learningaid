@@ -31,7 +31,7 @@ export default function Singlecard(props) {
         <div className="card-category">Category: {card.cardcategory}</div>
         <div className="card-note">Notes: {card.cardnote} </div>
       </div>
-      <button onClick={handleClick}>delete card</button>
+      <button className="delete-signle-card-button" onClick={handleClick}>delete card</button>
     </div>
   );
 }

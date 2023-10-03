@@ -21,3 +21,8 @@
   margin: 20px;
   width: 100px;
 }
+
+.delete-signle-card-button {
+  width: 50px;
+  background-color: firebrick;
+}
