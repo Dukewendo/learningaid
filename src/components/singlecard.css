@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 45px;
   width: 400px;
   height: auto;
   background-color: aquamarine;
@@ -27,9 +27,14 @@
   margin: 20px;
   width: 100px;
 }
+.delete-btn-container {
+  display: flex;
+  justify-content: center;
+}
 
 .delete-signle-card-button {
   width: 50px;
   background-color: firebrick;
   margin: 20px;
+  border-radius: 5px;
 }

@@ -38,12 +38,14 @@ export default function Singlecard(props) {
           <h3>Category: {card.cardcategory}</h3>
         </div>
         <div className="card-note">
-          <h3>Notes: {card.cardnote}</h3>{" "}
+          <h3>Notes: {card.cardnote}</h3>
         </div>
       </div>
-      <button className="delete-signle-card-button" onClick={handleClick}>
-        delete card
-      </button>
+      <div className="delete-btn-container">
+        <button className="delete-signle-card-button" onClick={handleClick}>
+          delete card
+        </button>
+      </div>
     </div>
   );
 }
