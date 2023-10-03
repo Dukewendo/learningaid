@@ -60,10 +60,10 @@ export default function Learninghome() {
         <button className="clear-all-button" onClick={handlebuttonClick}>
           Clear all cards
         </button>
-        <h5>
+        <p className="localstorage-para">
           This page is using {((storageSize / 5000000) * 100).toFixed(5)} % of
-          localStorage memory
-        </h5>
+          your 5Mb local storage memory
+        </p>
       </div>
     </>
   );
