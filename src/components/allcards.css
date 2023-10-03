@@ -9,8 +9,11 @@
 }
 
 .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 200px;
-  height: 175px;
+  height: 200px;
   background-color: aquamarine;
   color: black;
   border-style: solid;
@@ -21,6 +24,9 @@
   overflow: hidden;
 }
 
+
+
+
 .card-content:hover {
   background-color: darkgoldenrod;
 }
@@ -28,3 +34,4 @@
 .card-link {
   text-decoration: none;
 }
+

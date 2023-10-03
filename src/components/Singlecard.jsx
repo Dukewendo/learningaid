@@ -17,21 +17,33 @@ export default function Singlecard(props) {
   }
 
   function handleClick() {
-    const existingData = JSON.parse(localStorage.getItem("session"));
-    existingData.splice(cardData.indexOf(card), 1);
-    localStorage.setItem("session", JSON.stringify(existingData));
-    navigate(-1);
+    if (window.confirm("Are you sure?")) {
+      const existingData = JSON.parse(localStorage.getItem("session"));
+      existingData.splice(cardData.indexOf(card), 1);
+      localStorage.setItem("session", JSON.stringify(existingData));
+      navigate(-1);
+    } else {
+      return false;
+    }
   }
 
   return (
     <div className="single-card-container">
       <Header />
       <div className="single-card-content" onClick={() => navigate(-1)}>
-        <div className="card-title"><h2>Title: {card.cardtitle}</h2></div>
-        <div className="card-category"><h3>Category: {card.cardcategory}</h3></div>
-        <div className="card-note"><h3>Notes: {card.cardnote}</h3> </div>
+        <div className="card-title">
+          <h2>Title: {card.cardtitle}</h2>
+        </div>
+        <div className="card-category">
+          <h3>Category: {card.cardcategory}</h3>
+        </div>
+        <div className="card-note">
+          <h3>Notes: {card.cardnote}</h3>{" "}
+        </div>
       </div>
-      <button className="delete-signle-card-button" onClick={handleClick}>delete card</button>
+      <button className="delete-signle-card-button" onClick={handleClick}>
+        delete card
+      </button>
     </div>
   );
 }
