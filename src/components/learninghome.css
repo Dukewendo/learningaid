@@ -24,3 +24,9 @@
   margin: 10px;
 }
 
+.clear-all-button {
+  height: 45px;
+  width: 65px;
+  background-color:firebrick
+}
+
