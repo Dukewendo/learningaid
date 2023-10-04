@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -18,7 +18,7 @@ function App() {
   console.log(cardData);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Learninghome cardData={cardData} />}></Route>
         <Route path="/:cardtitle" element={<Singlecard cardData={cardData} />}></Route>
@@ -27,7 +27,7 @@ function App() {
           element={<Newcard cardData={cardData} />}
         ></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
