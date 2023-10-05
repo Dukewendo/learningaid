@@ -26,8 +26,9 @@ export default function Singlecard(props) {
   function handleClick() {
     if (window.confirm("Are you sure?")) {
       const existingData = JSON.parse(localStorage.getItem("session"));
-      existingData.splice(cardData.indexOf(card), 1);
-      localStorage.setItem("session", JSON.stringify(existingData));
+      const updatedData = existingData.filter((item) => item.cardtitle !== cardtitle);
+      localStorage.setItem("session", JSON.stringify(updatedData));
+      setCardData(updatedData);
       navigate(-1);
     } else {
       return false;
