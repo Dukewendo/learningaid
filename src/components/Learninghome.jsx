@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 
 import "../components/learninghome.css";
 
@@ -9,7 +9,16 @@ import Header from "./Header";
 import Allcards from "./Allcards";
 
 export default function Learninghome() {
-  let cardData = JSON.parse(localStorage.getItem("session")) || [];
+  const [cardData, setCardData] = useState([]);
+
+  const fetchCardData = () => {
+    const data = JSON.parse(localStorage.getItem("session")) || [];
+    setCardData(data);
+  };
+
+  useEffect(() => {
+    fetchCardData();
+  }, []);
 
   const navigate = useNavigate();
 
