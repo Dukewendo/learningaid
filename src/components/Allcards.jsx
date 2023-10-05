@@ -1,9 +1,12 @@
 import React from "react";
-
 import "../components/allcards.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Allcards(props) {
   const cardData = props.cardData;
+
+  const navigate = useNavigate();
+  navigate(0);
 
   return (
     <div className="card-container">
