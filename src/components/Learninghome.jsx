@@ -15,12 +15,12 @@ export default function Learninghome() {
     setCardData(data);
   };
 
-  useEffect(() => {
-    console.log("fetching localStorage data")
-    fetchCardData();
-  }, []);
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log("fetching localStorage data");
+    fetchCardData();
+  }, [navigate]);
 
   function handleClick() {
     navigate("/newcard");
@@ -49,6 +49,7 @@ export default function Learninghome() {
 
   return (
     <>
+    <p>Testing update 1</p>
       <Header />
       <div className="search-container">
         <input
