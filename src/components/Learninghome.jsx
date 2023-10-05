@@ -17,7 +17,7 @@ export default function Learninghome() {
 
   useEffect(() => {
     fetchCardData();
-  }, []);
+  });
 
   const navigate = useNavigate();
 
