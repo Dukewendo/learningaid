@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../components/allcards.css";
 
 export default function Allcards(props) {
