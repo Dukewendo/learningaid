@@ -19,13 +19,8 @@ export default function Learninghome() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("fetching localStorage data");
     fetchCardData();
   }, [navigate]);
-
-  function updateCardData(newData) {
-    setCardData(newData);
-  }
 
   function handleClick() {
     navigate("/newcard");

@@ -18,16 +18,24 @@ function App() {
     localStorage.setItem("session", JSON.stringify(newData));
   }
 
-  
-
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Learninghome cardData={cardData} updateCardData={updateCardData}/>}></Route>
-        <Route path="/:cardtitle" 
-        element={<Singlecard 
-        cardData={cardData} 
-        updateCardData={Learninghome.updateCardData}/>}></Route>
+        <Route
+          path="/"
+          element={
+            <Learninghome cardData={cardData} updateCardData={updateCardData} />
+          }
+        ></Route>
+        <Route
+          path="/:cardtitle"
+          element={
+            <Singlecard
+              cardData={cardData}
+              updateCardData={Learninghome.updateCardData}
+            />
+          }
+        ></Route>
         <Route
           path="/newcard"
           element={<Newcard cardData={cardData} />}

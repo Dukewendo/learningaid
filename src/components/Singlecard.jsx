@@ -26,10 +26,11 @@ export default function Singlecard(props) {
   function handleClick() {
     if (window.confirm("Are you sure?")) {
       const existingData = JSON.parse(localStorage.getItem("session"));
-      const updatedData = existingData.filter((item) => item.cardtitle !== cardtitle);
+      const updatedData = existingData.filter(
+        (item) => item.cardtitle !== cardtitle
+      );
       localStorage.setItem("session", JSON.stringify(updatedData));
       setCardData(updatedData);
-      props.updateCardData(updatedData);
       navigate(-1);
     } else {
       return false;
