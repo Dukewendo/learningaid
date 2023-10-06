@@ -29,6 +29,7 @@ export default function Singlecard(props) {
       const updatedData = existingData.filter((item) => item.cardtitle !== cardtitle);
       localStorage.setItem("session", JSON.stringify(updatedData));
       setCardData(updatedData);
+      props.updateCardData(updatedData);
       navigate(-1);
     } else {
       return false;

@@ -8,6 +8,7 @@ import Header from "./Header";
 import Allcards from "./Allcards";
 
 export default function Learninghome() {
+
   const [cardData, setCardData] = useState([]);
 
   const fetchCardData = () => {
@@ -21,6 +22,10 @@ export default function Learninghome() {
     console.log("fetching localStorage data");
     fetchCardData();
   }, [navigate]);
+
+  function updateCardData(newData) {
+    setCardData(newData);
+  }
 
   function handleClick() {
     navigate("/newcard");
