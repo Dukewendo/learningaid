@@ -49,7 +49,11 @@ export default function Learninghome() {
 
   return (
     <>
+<<<<<<< HEAD
     <p>Testing update 2 times</p>
+=======
+    <p>Testing update 1</p>
+>>>>>>> 7cda697dcdc7b8d1b73a63d4a2f4bdaef5ce13f2
       <Header />
       <div className="search-container">
         <input
