@@ -3,6 +3,7 @@ import "../components/allcards.css";
 
 export default function Allcards() {
   let cardData = JSON.parse(localStorage.getItem("session")) || [];
+  console.log("fetching the data to map")
 
   return (
     <div className="card-container">
