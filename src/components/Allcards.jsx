@@ -1,8 +1,8 @@
 import React from "react";
 import "../components/allcards.css";
 
-export default function Allcards(props) {
-  const cardData = props.cardData;
+export default function Allcards() {
+  let cardData = JSON.parse(localStorage.getItem("session")) || [];
 
   return (
     <div className="card-container">
