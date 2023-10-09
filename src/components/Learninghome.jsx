@@ -8,7 +8,6 @@ import Header from "./Header";
 import Allcards from "./Allcards";
 
 export default function Learninghome() {
-
   const [cardData, setCardData] = useState([]);
 
   const fetchCardData = () => {
@@ -49,11 +48,8 @@ export default function Learninghome() {
 
   return (
     <>
-<<<<<<< HEAD
-    <p>Testing update 2 times</p>
-=======
-    <p>Testing update 1</p>
->>>>>>> 7cda697dcdc7b8d1b73a63d4a2f4bdaef5ce13f2
+      <p>Testing update 2 times</p>
+
       <Header />
       <div className="search-container">
         <input
