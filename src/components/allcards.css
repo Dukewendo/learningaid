@@ -1,0 +1,37 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: min-content;
+  gap: 10px;
+  margin: 10px;
+  justify-items: center;
+
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  border-radius: 10px;
+  justify-self: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+
+
+.card-content:hover {
+  background-color: darkgoldenrod;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
