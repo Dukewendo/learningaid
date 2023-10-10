@@ -50,3 +50,8 @@ h1 {
     margin: 5px;
     border-radius: 5px;
 }
+
+.error-message {
+    grid-column-start: 2;
+    grid-row-start: 6;
+}
