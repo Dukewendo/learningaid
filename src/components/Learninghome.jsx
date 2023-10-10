@@ -10,6 +10,7 @@ import Allcards from "./Allcards";
 export default function Learninghome() {
   const [cardData, setCardData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredCards, setFilteredCards] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,14 +35,12 @@ export default function Learninghome() {
     }
   }
 
-  function handleSearch(e) {
-    const newSearchTerm = e.target.value.toLowerCase();
-    setSearchTerm(newSearchTerm); 
-  }
-
-  const filteredCards = cardData.filter((item) =>
-    item.cardtitle.toLowerCase().includes(searchTerm)
-  );
+  useEffect(() => {
+    const FilteredCards = cardData.filter((item) =>
+      item.cardtitle.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredCards(FilteredCards);
+  }, [cardData, searchTerm]);
 
   const storageSize = new Blob(Object.values(localStorage)).size;
 
@@ -53,7 +52,8 @@ export default function Learninghome() {
           type="text"
           placeholder="Search by title"
           className="card-search"
-          onChange={handleSearch}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
         />
       </div>
       <div className="button-container">

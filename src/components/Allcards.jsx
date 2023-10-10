@@ -3,6 +3,7 @@ import "../components/allcards.css";
 
 export default function Allcards(props) {
   let cardData = props.cardData;
+  console.log(cardData)
 
   return (
     <div className="card-container">
