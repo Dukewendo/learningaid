@@ -48,8 +48,6 @@ export default function Learninghome() {
 
   return (
     <>
-      <p>Testing update 3 times</p>
-
       <Header />
       <div className="search-container">
         <input
