@@ -8,19 +8,9 @@ import Header from "./Header";
 import Allcards from "./Allcards";
 
 export default function Learninghome() {
-  const [cardData, setCardData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredCards, setFilteredCards] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchCardData();
-  }, []);
-
-  const fetchCardData = () => {
-    const data = JSON.parse(localStorage.getItem("session")) || [];
-    setCardData(data);
-  };
+  const cardData = JSON.parse(localStorage.getItem("session")) || [];
 
   function handleClick() {
     navigate("/newcard");
@@ -35,35 +25,18 @@ export default function Learninghome() {
     }
   }
 
-  useEffect(() => {
-    const filteredCards = cardData.filter((item) =>
-      item.cardtitle.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredCards(filteredCards);
-  }, [cardData, searchTerm]);
-
   const storageSize = new Blob(Object.values(localStorage)).size;
 
   return (
     <>
       <Header />
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search by title"
-          className="card-search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
-        />
-      </div>
       <div className="button-container">
         <button className="add-card-button" onClick={handleClick}>
           Add card
         </button>
       </div>
 
-      <Allcards cardData={filteredCards} />
-
+      <Allcards cardData={cardData} />
       <div className="clear-all">
         <button className="clear-all-button" onClick={handlebuttonClick}>
           Clear all cards
