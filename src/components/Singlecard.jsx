@@ -31,7 +31,7 @@ export default function Singlecard(props) {
       );
       localStorage.setItem("session", JSON.stringify(updatedData));
       setCardData(updatedData);
-      navigate(-1);
+      navigate("/#/learninghome");
     } else {
       return false;
     }
