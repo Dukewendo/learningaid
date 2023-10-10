@@ -3,23 +3,23 @@ import { useNavigate } from "react-router-dom";
 
 import "../components/learninghome.css";
 
-//Pages
+// Pages
 import Header from "./Header";
 import Allcards from "./Allcards";
 
 export default function Learninghome() {
   const [cardData, setCardData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchCardData();
+  }, []);
 
   const fetchCardData = () => {
     const data = JSON.parse(localStorage.getItem("session")) || [];
     setCardData(data);
   };
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchCardData();
-  }, [navigate]);
 
   function handleClick() {
     navigate("/newcard");
@@ -34,15 +34,14 @@ export default function Learninghome() {
     }
   }
 
-  const [filterCards, setfilterCards] = useState("");
-
   function handleSearch(e) {
-    setfilterCards(e.target.value);
+    const newSearchTerm = e.target.value.toLowerCase();
+    setSearchTerm(newSearchTerm); 
   }
 
-  let filteredCards = cardData.filter((cardData) => {
-    return cardData.cardtitle.toLowerCase().includes(filterCards.toLowerCase());
-  });
+  const filteredCards = cardData.filter((item) =>
+    item.cardtitle.toLowerCase().includes(searchTerm)
+  );
 
   const storageSize = new Blob(Object.values(localStorage)).size;
 
@@ -64,6 +63,7 @@ export default function Learninghome() {
       </div>
 
       <Allcards cardData={filteredCards} />
+
       <div className="clear-all">
         <button className="clear-all-button" onClick={handlebuttonClick}>
           Clear all cards
