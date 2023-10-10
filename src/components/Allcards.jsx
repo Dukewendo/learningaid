@@ -2,8 +2,12 @@ import React from "react";
 import "../components/allcards.css";
 
 export default function Allcards(props) {
-  let cardData = props.cardData;
-  console.log(cardData)
+  const cardData = props.cardData || []; 
+  if (cardData.length === 0 ) {
+    console.log("no data")
+  } else {
+    console.log(cardData)
+  }
 
   return (
     <div className="card-container">

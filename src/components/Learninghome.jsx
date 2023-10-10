@@ -10,7 +10,7 @@ import Allcards from "./Allcards";
 export default function Learninghome() {
   const [cardData, setCardData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredCards, setFilteredCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,10 +36,10 @@ export default function Learninghome() {
   }
 
   useEffect(() => {
-    const FilteredCards = cardData.filter((item) =>
+    const filteredCards = cardData.filter((item) =>
       item.cardtitle.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setFilteredCards(FilteredCards);
+    setFilteredCards(filteredCards);
   }, [cardData, searchTerm]);
 
   const storageSize = new Blob(Object.values(localStorage)).size;
