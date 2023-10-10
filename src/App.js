@@ -22,7 +22,7 @@ function App() {
     <HashRouter basename ="/">
       <Routes>
         <Route
-          path="/"
+          path="/learninghome"
           element={
             <Learninghome cardData={cardData} updateCardData={updateCardData} />
           }
