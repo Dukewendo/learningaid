@@ -62,6 +62,9 @@ export default function Newcard() {
           cols="30"
           rows="15"
         ></textarea>
+        {!isValid && (
+          <p className="error-message">Please fill in all the fields.</p>
+        )}
         <input className="submit-button" type="submit" value="submit" />
       </form>
     </div>
